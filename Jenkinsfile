@@ -1,9 +1,9 @@
 pipeline {
-    agent any
+    agent { docker { image 'python:3.7' } }
     stages {
-        stage('build') {
+        stage('Funktionstest') {
             steps {
-                echo 'Docker inside of docker does not work...'
+                sh 'docker --version'
             }
         }
     }
